@@ -1,0 +1,3 @@
+[submodule "fpga_workshop_collaterals"]
+	path = fpga_workshop_collaterals
+	url = https://github.com/nandithaec/fpga_workshop_collaterals.git
