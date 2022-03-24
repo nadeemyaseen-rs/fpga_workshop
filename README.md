@@ -28,9 +28,9 @@ Below diagram shows all the steps involved in implementing a design on FPGA
 
 ![methodology](screenshots/fpga_methodolgy.png)
 
+For the Lab we will be using Basys3 board. Below figure shows the different part of this board:
 
+![basys3](screenshots/basys3_board.png)
 
-
-
-
+To download the Software and board related files go to sub-module directory and see slide no. 19
 
