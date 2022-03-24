@@ -20,9 +20,15 @@ LUT:
 
 The desired design like 2 into 1 Mux is can be implemented using the LUT has shown in below screen shot. The possible input of 2 into 1 Mux are 8 which are now input of 3 input LUT. Similarly inter-connection can be use to pass the signal between I/O and LUT and between the LUTs and LUTs. I/Os can programmed to work as input as well as output.
 
+![LUT Examle](screenshots/lut_example_mux.png)
+
 FPGA Design Methodology:
 
 Below diagram shows all the steps involved in implementing a design on FPGA
+
+![methodology](screenshots/fpga_methodolgy.png)
+
+
 
 
 
