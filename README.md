@@ -83,4 +83,10 @@ In Flow Navigator window, click on synthesis to synthesis the design. This will 
 ![day1_lab_synth_schematic](screenshots/day1_lab_synt_schematic.png)
 
 Now looking at timing report, it will show us that slack is positive. So we can move to implementation and then generate the bitstream. Once the bitstream is generated, click on `Open Hardware Manager` then on top a pop is shown about `Open target`, click on it and it will detect the board automatically if it is connected. 
+Apart from timing report, other reports can also be viewed.
+
+VIO (Virtual Input and Output):
+
+When we do not have physical access to Xilinx board then VIO can be used to provide the input and observe the output. The input of RTL design will be given as output of VIO and output of RTL design are the input of VIO. Follow last slide to generate the IP in Vivado and do the code modification.Generate the bitstream, load it using Hardware Manager. Now use VIO to provide the input.
+
 
