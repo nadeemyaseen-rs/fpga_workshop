@@ -34,3 +34,47 @@ For the Lab we will be using Basys3 board. Below figure shows the different part
 
 To download the Software and board related files go to sub-module directory and see slide no. 19
 
+Day 1 Lab:
+
+Vivado Tutorial:
+
+* Invoke vivado
+
+Creating New Project:
+
+* On first screen:
+    * click on create new project
+    * give project name
+    * set the project working directory
+    * click next
+* Set the board. If the board files are installed then just you can search it using board name other wise select appropriate category then board number to specify the board. Click next
+* On left side there is window of `project summary`
+* On right side there is window of `project management`
+
+Adding RTL and Testbench:
+
+* To add the RTL files, click on `Add Source` in `project management` window. This will pop up new window, choose `Add or create design source` option and cick next. Point it to RTL files and click `add`. Make sure to choose all the option. Click finish. Under Project Management Window on right side, there is source window, the added files will appera there.
+* Follow the above step to add test bench but make sure to select `add or create simulation source` this time.
+
+Running Simulation:
+
+* To run the simulation, click on `Run Simulation` in `Flow Navigator` window on right side. 
+Following waveform can be observed in simulation:
+
+![day1_lab_sim_waveform](screenshots/day_1_sim_waveform.png)
+
+Elaborating Design:
+
+To elaborate the design, click on `Open Elaborated Design` in Flow Navigator window. Once the elaboration is done, click on schematic to view how the design is implemented. For the current counter design, schematic looks like as shown below:
+
+![day1_lab_schematic](screenshots/day1_lab_schematic.png)
+
+Similary on top right corner there is box to change the view. Set it to I/O Planning to see the I/O of board as shown in below fig:
+
+![day1_lab_io_plan](screenshots/day1_lab_io.png)
+
+To map the I/O, either look at the data sheet of board or on actual board to find the pin number 
+
+
+
+
