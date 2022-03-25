@@ -80,10 +80,7 @@ Synthesis:
 
 In Flow Navigator window, click on synthesis to synthesis the design. This will synthesis the design. Looking at the timing report indicate us it is not reporting the slack value. That's because we have not given it the clock frequency. To add actual timing we need to provide the clock frequency which can be done using the `Constraints Wizard` in Flow Navigator or using the TCL command in XDC file. Once providing the clock frequency, synthesis the design again. After this, synthesising it again, the schematic will look like as shown below:
 
+![day1_lab_synth_schematic](screenshots/day1_lab_synt_schematic.png)
 
-
-Now looking at timing report, it will show us that slack is positive. So we can move to implementation and then generate the bitstream. 
-
-
-
+Now looking at timing report, it will show us that slack is positive. So we can move to implementation and then generate the bitstream. Once the bitstream is generated, click on `Open Hardware Manager` then on top a pop is shown about `Open target`, click on it and it will detect the board automatically if it is connected. 
 
