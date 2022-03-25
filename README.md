@@ -73,7 +73,16 @@ Similary on top right corner there is box to change the view. Set it to I/O Plan
 
 ![day1_lab_io_plan](screenshots/day1_lab_io.png)
 
-To map the I/O, either look at the data sheet of board or on actual board to find the pin number 
+To map the I/O, either look at the data sheet of board or on actual board to find the pin number. On Vivado software, set the clock, reset button and output LEDs. Save it as constraint file. 
+Slack means the time difference between the data required time and data arrival time.
+
+Synthesis:
+
+In Flow Navigator window, click on synthesis to synthesis the design. This will synthesis the design. Looking at the timing report indicate us it is not reporting the slack value. That's because we have not given it the clock frequency. To add actual timing we need to provide the clock frequency which can be done using the `Constraints Wizard` in Flow Navigator or using the TCL command in XDC file. Once providing the clock frequency, synthesis the design again. After this, synthesising it again, the schematic will look like as shown below:
+
+
+
+Now looking at timing report, it will show us that slack is positive. So we can move to implementation and then generate the bitstream. 
 
 
 
