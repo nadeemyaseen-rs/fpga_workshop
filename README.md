@@ -183,6 +183,23 @@ $VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py \
 ```
 This will generate the power report with extension `.power`. This report has all the information about the consumption of power by different components.
 
+Day 3
 
+To implement the RISCV Mythcore (link [hrer](https://github.com/shivanishah269/risc-v-core)), choose the the verilog file containing the code of entire core. Create a new project in vivado and add the `mythcore_test.v` as verilog file source and `test.v` as simulation source. Mythcore is a pipe line processor. Initially the memory was loaded to sum the first 9 numbers. Once the files are added to Vivado and running the simulaiton, the sum 45 can be seen on wavform as shown below:
 
+![mythcore_sim](screenshots/day3_lab_sim.png)
+
+Running the elobration step following schematic can vbe seen:
+
+![mythcore_schematic](screenshots/day3_lab_schemtic.png)
+
+Now to the run the flow till bitstream and use the ILA (integrated logic Analyser), remove the output port, generate the ILA IP from Xilinx IP catalog and instantiate it to observe the output. Run the synthesis and add the timing and Pin constraints file. Make sure slack is positive by viewing the timing summary. Run the implementation and observe the implemented design as shown below:
+
+![mythcore_implementation](screenshots/day3_lab_netlsitview.png)
+
+And the utilization of various components can be as follow:
+
+![mythcore_utilization](screenshots/day3_lab_rpt.png)
+
+Day4
 
