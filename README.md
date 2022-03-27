@@ -203,3 +203,71 @@ And the utilization of various components can be as follow:
 
 Day4
 
+SOFA ([Skywater Opensource FPGAs](https://github.com/lnis-uofu/SOFA)) are a series of open source FPGA IPs using the open source skywater 13nm PDK and OpenFPGA framework. We will take `counter.v` as example verilog design and pass it through the SPFA flow open source architecture. Using the quick start guide given on SOFA repo, modify the task config file to point to counter.v design file. and run the flow. File `vpr_stdout.log` shows the information about utilization as fellow:
+
+```
+Circuit Statistics:
+  Blocks: 30
+    .input :       2
+    .latch :       8
+    .output:       8
+    4-LUT  :      12
+  Nets  : 22
+    Avg Fanout:     2.9
+    Max Fanout:     8.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+
+```
+```
+Pb types usage...
+  inpad        : 2
+  outpad       : 8
+  lut4         : 4
+  ble4         : 4
+  ff           : 8
+  fle          : 11
+  clb          : 2
+  lut3inter    : 7
+  ble3         : 8
+  io           : 10
+  lut3         : 8
+  lut          : 12
+
+```
+This flow does not contain the timing information as we have not given the SDC constraint file. The SDC constraints file will be given to VPR tool and following slac information is observed.
+
+* For setup timing:
+
+```
+‌‌clock clk (rise edge)                                           35.000    35.000
+clock source latency                                             0.000    35.000
+clk.inpad[0] (.input)                                            0.000    35.000
+q[6].clk[0] (.latch)                                             0.110    35.110
+clock uncertainty                                                0.000    35.110
+cell setup time                                                 -0.390    34.720
+data required time                                                        34.720
+--------------------------------------------------------------------------------
+data required time                                                        34.720
+data arrival time                                                        -25.920
+--------------------------------------------------------------------------------
+slack (MET)                                                                8.800
+
+```
+
+* For hold timing
+
+```
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+q[1].clk[0] (.latch)                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+cell hold time                                                   0.390     0.390
+data required time                                                         0.390
+--------------------------------------------------------------------------------
+data required time                                                        -0.390
+data arrival time                                                          4.170
+--------------------------------------------------------------------------------
+slack (MET)                                                                3.780
+``` 
