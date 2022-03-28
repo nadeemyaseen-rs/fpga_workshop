@@ -1,5 +1,6 @@
 # fpga_workshop
-Day 1 lecture 1.1:
+## Day 1:
+
 An FPGA is a Field Programmabe Gate Array. It's main advantage over ASIC (Application specific integrated circuit) is that it's hardware can be re-configured as many time as we want as compared to ASIC in which the hardware once defined become permanet and can't be re-configured without repeating the entite cycle. An FPGA architecture has:
 * CLB (configureable logic block)
 * Programmable interconnection
@@ -16,13 +17,13 @@ A CLB further consist of:
 * Mux
 * FlipFlop
 
-LUT:
+#### LUT:
 
 The desired design like 2 into 1 Mux is can be implemented using the LUT has shown in below screen shot. The possible input of 2 into 1 Mux are 8 which are now input of 3 input LUT. Similarly inter-connection can be use to pass the signal between I/O and LUT and between the LUTs and LUTs. I/Os can programmed to work as input as well as output.
 
 ![LUT Examle](screenshots/lut_example_mux.png)
 
-FPGA Design Methodology:
+#### FPGA Design Methodology:
 
 Below diagram shows all the steps involved in implementing a design on FPGA
 
@@ -34,7 +35,7 @@ For the Lab we will be using Basys3 board. Below figure shows the different part
 
 To download the Software and board related files go to sub-module directory and see slide no. 19
 
-Day 1 Lab:
+### Day 1 Lab:
 
 Vivado Tutorial:
 
@@ -89,7 +90,7 @@ VIO (Virtual Input and Output):
 
 When we do not have physical access to Xilinx board then VIO can be used to provide the input and observe the output. The input of RTL design will be given as output of VIO and output of RTL design are the input of VIO. Follow last slide to generate the IP in Vivado and do the code modification.Generate the bitstream, load it using Hardware Manager. Now use VIO to provide the input.
 
-Day 2
+## Day 2:
 
 OpenFPGA
 
@@ -183,7 +184,7 @@ $VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py \
 ```
 This will generate the power report with extension `.power`. This report has all the information about the consumption of power by different components.
 
-Day 3
+## Day 3:
 
 To implement the RISCV Mythcore (link [hrer](https://github.com/shivanishah269/risc-v-core)), choose the the verilog file containing the code of entire core. Create a new project in vivado and add the `mythcore_test.v` as verilog file source and `test.v` as simulation source. Mythcore is a pipe line processor. Initially the memory was loaded to sum the first 9 numbers. Once the files are added to Vivado and running the simulaiton, the sum 45 can be seen on wavform as shown below:
 
@@ -201,7 +202,7 @@ And the utilization of various components can be as follow:
 
 ![mythcore_utilization](screenshots/day3_lab_rpt.png)
 
-Day4
+## Day 4:
 
 SOFA ([Skywater Opensource FPGAs](https://github.com/lnis-uofu/SOFA)) are a series of open source FPGA IPs using the open source skywater 13nm PDK and OpenFPGA framework. We will take `counter.v` as example verilog design and pass it through the SPFA flow open source architecture. Using the quick start guide given on SOFA repo, modify the task config file to point to counter.v design file. and run the flow. File `vpr_stdout.log` shows the information about utilization as fellow:
 
@@ -235,7 +236,7 @@ Pb types usage...
   lut          : 12
 
 ```
-This flow does not contain the timing information as we have not given the SDC constraint file. The SDC constraints file will be given to VPR tool and following slac information is observed.
+This run does not contain the timing information as we have not given the SDC constraint file. The SDC constraints file will be given to VPR tool and following slac information is observed.
 
 * For setup timing:
 
@@ -271,3 +272,47 @@ data arrival time                                                          4.170
 --------------------------------------------------------------------------------
 slack (MET)                                                                3.780
 ``` 
+
+Below is the power statistics:
+
+## Day 5:
+
+On day 5, the RISCV core RVMyth is implemented on the open source architecture using the SOFA. Following figures shows the utilization:
+
+```
+Pb types usage...
+  inpad        : 2
+  outpad       : 8
+  shift_reg    : 3
+  lut4         : 3031
+  ble4         : 3031
+  ff           : 1807
+  fle          : 3477
+  clb          : 447
+  lut3inter    : 443
+  ble3         : 663
+  io           : 10
+  lut3         : 648
+  lut          : 3679
+
+
+Logic Element (fle) detailed count:
+  Total number of Logic Elements used : 3477
+  LEs used for logic and registers    : 1741
+  LEs used for logic only             : 1732
+  LEs used for registers only         : 4
+
+```
+To get the timing information, SDC file is passed. Below figures shows that slack is met
+
+```
+
+```
+
+## Acknowledgement:
+
+Thankful to Mr. Kunal for arranging the workshop and Mam Nanditha Rao.
+
+# Note:
+
+The work is still under progress.
