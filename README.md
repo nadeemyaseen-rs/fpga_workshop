@@ -341,7 +341,7 @@ slack (MET)                                                                7.540
 
 ## Acknowledgement:
 
-Thankful to Mr. Kunal for arranging the workshop and Mam Nanditha Rao.
+Thankfull to Mr. Kunal for arranging the workshop and Mam Nanditha Rao.
 
 # Note:
 
