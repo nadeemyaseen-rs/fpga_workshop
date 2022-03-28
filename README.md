@@ -305,8 +305,38 @@ Logic Element (fle) detailed count:
 ```
 To get the timing information, SDC file is passed. Below figures shows that slack is met
 
+Hold timing:
+
+```
+clock clk (rise edge)                                            0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input)                                            0.000     0.000
+CPU_is_bltu_a3.clk[0] (.latch)                                   0.000     0.000
+clock uncertainty                                                0.000     0.000
+cell hold time                                                   0.390     0.390
+data required time                                                         0.390
+--------------------------------------------------------------------------------
+data required time                                                        -0.390
+data arrival time                                                          1.350
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.960
 ```
 
+Setup timing:
+
+```
+clock clk (rise edge)                                          200.000   200.000
+clock source latency                                             0.000   200.000
+clk.inpad[0] (.input)                                            0.000   200.000
+CPU_Xreg_value_a4[22][31].clk[0] (.latch)                        0.110   200.110
+clock uncertainty                                                0.000   200.110
+cell setup time                                                 -0.390   199.720
+data required time                                                       199.720
+--------------------------------------------------------------------------------
+data required time                                                       199.720
+data arrival time                                                       -192.180
+--------------------------------------------------------------------------------
+slack (MET)                                                                7.540
 ```
 
 ## Acknowledgement:
